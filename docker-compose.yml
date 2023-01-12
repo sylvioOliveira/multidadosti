@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  apache:
+    image: 'php:7.2-apache'
+    container_name: php
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./:/var/www/html
